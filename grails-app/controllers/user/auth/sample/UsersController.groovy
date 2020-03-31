@@ -11,31 +11,27 @@ class UsersController {
     }
 
     def list() {
-        [users: usersService.getAllUser()]
+        [users: usersService.findAllUser()]
     }
 
     def create() {
-        [user: new User(), roles: rolesService.getAllRoles()]
+        [user: new User(), roles: rolesService.findAllRoles()]
     }
 
     def save() {
-        try {
-            User user = new User()
-            bindData(user, params)
-            if (params?.userRole instanceof String) params.userRole = [params.userRole]
-            List roles = []
-            for (String id : params.userRole) {
-                roles << rolesService.findRoleById(id.toLong())
-            }
-            usersService.saveNewUser(user, roles)
-            redirect(controller: 'login', action: 'auth')
-        } catch (Exception e) {
-            flash.error = e.message
+        User user = new User()
+        bindData(user, params)
+        if (params?.userRole instanceof String) params.userRole = [params.userRole]
+        List roles = []
+        for (String id : params.userRole) {
+            roles << rolesService.findRoleById(id.toLong())
         }
+        usersService.saveNewUser(user, roles)
+        redirect(controller: 'login', action: 'auth')
     }
 
     def show() {
         Long id = params.id?.toLong()
-        [user: usersService.getUserById(id), roles: rolesService.getAllRoles()]
+        [user: usersService.findUserById(id), roles: rolesService.findAllRoles()]
     }
 }

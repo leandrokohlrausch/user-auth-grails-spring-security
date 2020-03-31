@@ -9,11 +9,11 @@ class UsersService {
 
     }
 
-    List<User> getAllUser() {
+    List<User> findAllUser() {
         return User.findAll()
     }
 
-    User getUserById(Long id) {
+    User findUserById(Long id) {
         return User.findById(id)
     }
 

@@ -11,10 +11,16 @@
         <g:link controller="logout">Logout</g:link>
     </li>
     <li>
-        <g:link controller="users" action="list">See All Users</g:link>
+        <g:link controller="users" action="list">See All Users (Just ADMIN_ROLE)</g:link>
     </li>
     <li>
         <g:link controller="users" action="show" params="${[id: user.id]}">See Current User</g:link>
+    </li>
+    <li>
+        <g:link controller="roles" action="index">See All Roles (Just ADMIN_ROLE)</g:link>
+    </li>
+    <li>
+        <g:link controller="requestMaps" action="index">See All Request Maps (Just ADMIN_ROLE)</g:link>
     </li>
 </ul>
 </body>
