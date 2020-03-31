@@ -12,9 +12,9 @@ Usage
 * 2 - Create tables structure (file structure_db.sql has table design)
 * 3 - Alter ./grails-app/conf/application.yml with username and password to access Database
 * 4 - Command line inside project folder:
-      * grails clean
-      * grails compile
-      * grails run-app
+* grails clean
+* grails compile
+* grails run-app
 * 5 - App listen on 8080 (if your not change)      
 
 
