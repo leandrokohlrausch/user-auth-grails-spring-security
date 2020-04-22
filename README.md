@@ -2,7 +2,7 @@
 
 - Database postgresql
 - Gradle 5.6.2 
-- Grails 4.0.2
+- Grails 4.0.3
 - Java JDK 11
 - Spring security 4.0.0
 
